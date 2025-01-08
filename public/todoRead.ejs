@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <title>Todos</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="mt-3">FullStack Todo Template Project</h1>
+      <hr />
+      <div class="rows">
+        <h2>TODO READ</h2>
+        <a href="/views" class="btn btn-link">Todo List</a>
+        <table class="table table-striped">
+          <tr>
+            <td>ID:</td>
+            <td># <%= todo.id %></td>
+          </tr>
+          <tr>
+            <td>Title:</td>
+            <td><%= todo.title %></td>
+          </tr>
+          <tr>
+            <td>Description:</td>
+            <td><%= todo.description %></td>
+          </tr>
+          <tr>
+            <td>Priority:</td>
+            <td><%= priorities[todo.priority] %></td>
+          </tr>
+          <tr>
+            <td>isDone:</td>
+            <td>
+              <%- todo.isDone? `<span class="text-success">yes</span>` : `<span
+                class="text-danger"
+                >no</span
+              >`%>
+            </td>
+          </tr>
+          <tr>
+            <td>CreatedAt:</td>
+            <td><%= todo.createdAt.toISOString() %></td>
+          </tr>
+          <tr>
+            <td>UpdatedAt:</td>
+            <td><%= todo.updatedAt.toISOString() %></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </body>
+</html>
